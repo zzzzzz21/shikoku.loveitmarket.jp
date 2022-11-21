@@ -959,6 +959,18 @@ register_post_type( 'news', array(
   'show_in_rest' => false	// ブロックエディターを使用しない、REST APIで表示しない
 ));
 
+//「お知らせ」カテゴリー
+$news_category_label = $options['news_category_label'] ? esc_html( $options['news_category_label'] ) : __( 'News category', 'tcd-w' );
+$news_category_slug = $options['news_category_slug'] ? sanitize_title( $options['news_category_slug'] ) : 'news_category';
+$news_category_labels = array(
+  'name' => $news_category_label,
+  'singular_name' => $news_category_label
+);
+register_taxonomy( 'news_category', 'news', array(
+  'labels' => $news_category_labels,
+  'hierarchical' => true,
+  'rewrite' => array( 'slug' => $news_category_slug )
+));
 
 /* アーカイブページの記事数を変更 */
 function change_news_num( $query ) {
