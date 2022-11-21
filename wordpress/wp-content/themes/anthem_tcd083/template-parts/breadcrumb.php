@@ -12,17 +12,23 @@
  <li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name"><?php echo esc_html($options['news_label']); ?></span><meta itemprop="position" content="2"></li>
 
 <?php
-     // news single -----------------------
+     // info news -----------------------
      } elseif($_SERVER['REQUEST_URI'] === '/info/news/') {
 ?>
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-w'); ?></span></a><meta itemprop="position" content="1"></li>
- <li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name"><?php echo esc_html($options['news_label']); ?></span><meta itemprop="position" content="2"></li>
- <?php
-     // news single -----------------------
+ <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/info/"><span itemprop="name">お知らせ</span></a><meta itemprop="position" content="2"></li>
+ <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+   <span itemprop="name" itemprop="item">ニュース</span><meta itemprop="position" content="3">
+ </li>
+<?php
+     // info schedule -----------------------
      } elseif($_SERVER['REQUEST_URI'] === '/info/schedule/') {
 ?>
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-w'); ?></span></a><meta itemprop="position" content="1"></li>
- <li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name"><?php echo esc_html($options['news_label']); ?></span><meta itemprop="position" content="2"></li>
+ <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/info/"><span itemprop="name">お知らせ</span></a><meta itemprop="position" content="2"></li>
+ <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+   <span itemprop="name" itemprop="item">スケジュール</span><meta itemprop="position" content="3">
+ </li>
 <?php
      // news single -----------------------
      } elseif(is_singular('news')) {
@@ -73,18 +79,7 @@
 ?>
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-w'); ?></span></a><meta itemprop="position" content="1"></li>
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name"><?php echo esc_html($options['blog_label']); ?></span></a><meta itemprop="position" content="2"></li>
- <?php if($category) { ?>
- <li class="category" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-  <?php
-       $count=1;
-       foreach ($category as $cat) {
-  ?>
-  <a itemprop="item" href="<?php echo esc_url(get_category_link($cat->term_id)); ?>"><span itemprop="name"><?php echo esc_html($cat->name); ?></span></a>
-  <?php $count++; } ?>
-  <meta itemprop="position" content="3">
- </li>
- <?php }; ?>
- <li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name"><?php the_title_attribute(); ?></span><meta itemprop="position" content="4"></li>
+ <li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name"><?php the_title_attribute(); ?></span><meta itemprop="position" content="3"></li>
 <?php }; ?>
  </ul>
 </div>

@@ -31,6 +31,11 @@
          $total_post_num = $product_query->post_count;
          if ($product_query->have_posts()) :
   ?>
+  
+  <?php
+  // 取扱商品個別ページでのみカルーセルを表示 
+  if(is_singular('product')) { 
+    ?>
   <div id="footer_carousel_wrap" <?php if(!$show_icon){ echo 'class="no_icon"'; }; ?>>
    <div id="footer_carousel">
     <h3 class="headline rich_font"><?php echo esc_html($options['footer_carousel_headline']); ?></h3>
@@ -82,6 +87,7 @@
    <div class="footer_bg_image mobile" style="background:url(<?php echo esc_attr($bg_image_mobile[0]); ?>) no-repeat center center; background-size:cover;"></div>
    <?php }; ?>
   </div><!-- END #footer_carousel_wrap -->
+  <?php }; ?>
   <?php
          endif;
        };
@@ -101,6 +107,10 @@
          $post_list_query = new wp_query($args);
          if($post_list_query->have_posts()):
   ?>
+    <?php
+  // トップページのみフッター箇所のカルーセルを表示する
+  if(is_front_page()) { 
+    ?>
   <div id="footer_post_list_wrap">
    <div id="footer_post_list" class="clearfix">
     <?php
@@ -138,6 +148,7 @@
     <?php endwhile; ?>
    </div><!-- END #footer_post_list -->
   </div><!-- END #footer_post_list_wrap -->
+  <?php }; ?>
   <?php endif; wp_reset_query(); }; ?>
 
   <div id="footer_bottom">
@@ -160,7 +171,7 @@
            $contact = $options['header_contact_url'];
            $show_rss = $options['header_show_rss'];
     ?>
-    <ul id="footer_sns" class="clearfix">
+    <!-- <ul id="footer_sns" class="clearfix">
      <?php if($insta) { ?><li class="insta"><a href="<?php echo esc_url($insta); ?>" rel="nofollow" target="_blank" title="Instagram"><span>Instagram</span></a></li><?php }; ?>
      <?php if($twitter) { ?><li class="twitter"><a href="<?php echo esc_url($twitter); ?>" rel="nofollow" target="_blank" title="Twitter"><span>Twitter</span></a></li><?php }; ?>
      <?php if($facebook) { ?><li class="facebook"><a href="<?php echo esc_url($facebook); ?>" rel="nofollow" target="_blank" title="Facebook"><span>Facebook</span></a></li><?php }; ?>
@@ -168,7 +179,7 @@
      <?php if($youtube) { ?><li class="youtube"><a href="<?php echo esc_url($youtube); ?>" rel="nofollow" target="_blank" title="Youtube"><span>Youtube</span></a></li><?php }; ?>
      <?php if($contact) { ?><li class="contact"><a href="<?php echo esc_url($contact); ?>" rel="nofollow" target="_blank" title="Contact"><span>Contact</span></a></li><?php }; ?>
      <?php if($show_rss) { ?><li class="rss"><a href="<?php esc_url(bloginfo('rss2_url')); ?>" rel="nofollow" target="_blank" title="RSS"><span>RSS</span></a></li><?php }; ?>
-    </ul>
+    </ul> -->
     <?php }; ?>
 
   </div><!-- END #footer_bottom -->

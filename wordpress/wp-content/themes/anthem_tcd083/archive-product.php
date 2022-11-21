@@ -41,21 +41,6 @@
       if ( $category && ! is_wp_error( $category ) ) :
         $total = count($category);
  ?>
- <div id="header_category_button_wrap" class="animate_item" data-width="900">
-  <div id="header_category_button"<?php if($total < 5) { echo ' class="type2"'; }; ?>>
-   <ol>
-    <li class="active"><a data-filter="all" href="#">ALL</a></li>
-    <?php
-         foreach ( $category as $cat ):
-           $cat_id = $cat->term_id;
-           $cat_name = $cat->name;
-    ?>
-    <li><a id="product_cat_<?php echo esc_attr($cat_id); ?>" data-filter="product_cat_<?php echo esc_attr($cat_id); ?>" href="#"><?php echo esc_html($cat_name); ?></a></li>
-    <?php endforeach; ?>
-   </ol>
-   <div class="slide_item"></div>
-  </div>
- </div>
  <?php endif; ?>
 </div><!-- END #header_category_button_wrap -->
 
