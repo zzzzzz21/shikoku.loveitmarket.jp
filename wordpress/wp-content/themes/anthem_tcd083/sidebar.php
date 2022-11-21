@@ -4,7 +4,7 @@
 
      $sidebar = '';
 
-     if ( is_post_type_archive('news') || is_singular('news') ) {
+     if ( is_post_type_archive('news') || is_singular('news') || $_SERVER['REQUEST_URI'] === '/info/news/' || $_SERVER['REQUEST_URI'] === '/info/schedule/') {
        $sidebar = 'news_widget';
      } else {
        $sidebar = 'blog_widget';
