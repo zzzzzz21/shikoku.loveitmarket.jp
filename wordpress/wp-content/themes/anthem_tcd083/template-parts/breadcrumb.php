@@ -18,7 +18,7 @@
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-w'); ?></span></a><meta itemprop="position" content="1"></li>
  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/info/"><span itemprop="name">お知らせ</span></a><meta itemprop="position" content="2"></li>
  <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-   <span itemprop="name" itemprop="item">ニュース</span><meta itemprop="position" content="3">
+   <span itemprop="name" itemprop="item">お知らせ</span><meta itemprop="position" content="3">
  </li>
 <?php
      // info schedule -----------------------
