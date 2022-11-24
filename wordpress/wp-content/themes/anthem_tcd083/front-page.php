@@ -272,4 +272,32 @@
 // コンテンツビルダーここまで
 ?>
 </div><!-- END #index_content_builder -->
+
+<?php
+      // ニュースティッカー --------------------------------------------------------------------
+        $args = array( 'post_type' => 'news', 'posts_per_page' => 3 );
+        $news_query = new wp_query($args);
+        if ($news_query->have_posts()) :
+ ?>
+ <div class="cb_contents">
+  <div class="cb_contents_inner">
+   <div id="index_news_slider" style="text-align: center;">
+    <?php while($news_query->have_posts()): $news_query->the_post(); ?>
+    <article class="item">
+     <a href="<?php the_permalink() ?>" class="clearfix">
+      <p class="date" ><time class="entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_time('Y.m.j'); ?></time></p>
+      <h4 class="title"><span><?php the_title_attribute(); ?></span></h4>
+     </a>
+    </article>
+    <?php endwhile;  ?>
+   </div>
+   <div class="link_button animate_item inview_mobile animate">
+    <a class="button_animation_type1" href="/news/"><span>お知らせ一覧</span></a>
+   </div>
+  </div>
+ </div>
+ <?php
+          endif;
+          wp_reset_query();
+ ?>
 <?php get_footer(); ?>

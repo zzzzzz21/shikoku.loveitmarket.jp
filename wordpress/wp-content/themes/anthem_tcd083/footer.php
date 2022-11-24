@@ -107,48 +107,6 @@
          $post_list_query = new wp_query($args);
          if($post_list_query->have_posts()):
   ?>
-    <?php
-  // トップページのみフッター箇所のカルーセルを表示する
-  if(is_front_page()) { 
-    ?>
-  <div id="footer_post_list_wrap">
-   <div id="footer_post_list" class="clearfix">
-    <?php
-         while($post_list_query->have_posts()): $post_list_query->the_post();
-           if(has_post_thumbnail()) {
-             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'size1' );
-           } elseif($options['no_image1']) {
-             $image = wp_get_attachment_image_src( $options['no_image1'], 'full' );
-           } else {
-             $image = array();
-             $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image1.gif";
-           }
-           $category = wp_get_post_terms( $post->ID, 'category' , array( 'orderby' => 'term_order' ));
-           if ( $category && ! is_wp_error($category) ) {
-             foreach ( $category as $cat ) :
-               $cat_name = $cat->name;
-               $cat_id = $cat->term_id;
-               break;
-             endforeach;
-           };
-    ?>
-    <article class="item">
-     <?php if ( $category && ! is_wp_error($category) ) { ?>
-     <p class="category cat_id_<?php echo esc_attr($cat_id); ?>"><a href="<?php echo esc_url(get_term_link($cat_id,'category')); ?>"><?php echo esc_html($cat_name); ?></a></p>
-     <?php }; ?>
-     <a class="animate_background clearfix" href="<?php the_permalink(); ?>">
-      <div class="image_wrap">
-       <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
-      </div>
-      <div class="title_area">
-       <h3 class="title"><span><?php the_title(); ?></span></h3>
-      </div>
-     </a>
-    </article>
-    <?php endwhile; ?>
-   </div><!-- END #footer_post_list -->
-  </div><!-- END #footer_post_list_wrap -->
-  <?php }; ?>
   <?php endif; wp_reset_query(); }; ?>
 
   <div id="footer_bottom">
