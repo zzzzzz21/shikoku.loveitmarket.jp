@@ -149,7 +149,7 @@
  <?php }; // END hide footer ?>
 
  <div id="return_top">
-  <a href="#body"><span>TOP</span></a>
+  <a href="#body"><img src="<?php echo get_template_directory_uri(); ?>/img/common_icon_love-it-market.png?ver=<?php echo version_num(); ?>" alt="十五万石"></a>
  </div>
 
  <?php

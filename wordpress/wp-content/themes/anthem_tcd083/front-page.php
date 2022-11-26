@@ -273,29 +273,63 @@
 ?>
 </div><!-- END #index_content_builder -->
 
+<section class="m-article-list">
+  <h3 class="m-article-list_title">販売拠点紹介</h3>
+  <p class="m-article-list_lead">四国という島国ブランドの下、常設型と移動型でハイブリッド展開します。</p>
+  <div class="m-article-list_inner">
+  <article class="m-article-box">
+    <a href="/base/">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base01.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      <h4 class="m-article-box_title">十五万石</h4>
+      <p class="m-article-box_text">
+        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+    </a>
+  </article>
+  <article class="m-article-box">
+    <a href="/base/">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      <h4 class="m-article-box_title">十五万石</h4>
+      <p class="m-article-box_text">
+        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+    </a>
+  </article>
+  <article class="m-article-box">
+    <a href="/base/">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      <h4 class="m-article-box_title">十五万石</h4>
+      <p class="m-article-box_text">
+        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+    </a>
+  </article>
+  </div>
+
+</section>
+
 <?php
-      // ニュースティッカー --------------------------------------------------------------------
+      //  --------------------------------------------------------------------
         $args = array( 'post_type' => 'news', 'posts_per_page' => 3 );
         $news_query = new wp_query($args);
         if ($news_query->have_posts()) :
  ?>
- <div class="cb_contents">
-  <div class="cb_contents_inner">
-   <div id="index_news_slider" style="text-align: center;">
+ <section class="m-news-list">
+  <h3 class="m-news-list_title">お知らせ</h3>
+  <div class="m-news-list_inner">
     <?php while($news_query->have_posts()): $news_query->the_post(); ?>
-    <article class="item">
-     <a href="<?php the_permalink() ?>" class="clearfix">
-      <p class="date" ><time class="entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_time('Y.m.j'); ?></time></p>
-      <h4 class="title"><span><?php the_title_attribute(); ?></span></h4>
+    <article class="m-news-list_item">
+     <a href="<?php the_permalink() ?>" class="m-news-list_link">
+      <p class="m-news-list_date" ><time class="entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_time('Y.m.j'); ?></time></p>
+      <h4 class="m-news-list_title"><span><?php the_title_attribute(); ?></span></h4>
      </a>
     </article>
     <?php endwhile;  ?>
    </div>
-   <div class="link_button animate_item inview_mobile animate">
-    <a class="button_animation_type1" href="/news/"><span>お知らせ一覧</span></a>
+   <div class="c-button-primary animate_item inview_mobile animate">
+    <a class="c-button-primary_link" href="/news/"><span>お知らせ一覧</span></a>
    </div>
-  </div>
- </div>
+</section>
  <?php
           endif;
           wp_reset_query();

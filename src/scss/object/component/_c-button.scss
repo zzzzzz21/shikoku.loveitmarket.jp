@@ -1,3 +1,31 @@
-.c-button {
+@use "../../config/" as config;
 
+.c-button-primary {
+    display: flex;
+    margin: 55px auto 0;
+    max-width: 300px;
+    width: 100%;
+
+    &_link {
+        align-items: center;
+        color: config.$base-white-text-color;
+        background: config.$base-background-pink;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 22px;
+        flex: 1;
+        justify-content: center;
+        min-height: 84px;
+        padding: 10px;
+        position: relative;
+
+        &::after {
+            content: ">>";
+            transition: none;
+        }
+
+        &:hover {
+            color: config.$base-white-text-color;
+        }
+    }
 }

@@ -47,4 +47,34 @@ body {
         }
       }
     }
+
+    .index_product_list {
+      background: config.$base-background-yellow;
+    }
+
+    #footer {
+      background: config.$base-background-black;
+
+      a {
+        color: config.$base-white-text-color;
+      }
+    }
+
+    #return_top {
+      right: 45px;
+      &.active {
+        bottom: 40px;
+      }
+  
+      a {
+        background: none;
+        height: auto;
+        line-height: 1;
+        width: auto;
+
+        &::before {
+          display: none;
+        }
+      }
+    } 
 }
