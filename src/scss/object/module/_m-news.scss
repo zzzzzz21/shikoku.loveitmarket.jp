@@ -1,0 +1,35 @@
+@use "../../config/" as config;
+
+.m-news-list {
+    background: config.$base-background-gray;
+    text-align: center;
+    padding: 115px 0;
+
+    &_title {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    &_inner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &_item {
+        
+    }
+
+    &_link {
+        align-items: center;
+        display: flex;
+        font-size: 20px;
+    }
+
+    &_title {
+        font-size: 20px;
+        font-weight: normal;
+        margin-left: 1em;
+    }
+}

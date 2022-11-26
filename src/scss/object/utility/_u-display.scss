@@ -1,0 +1,19 @@
+@use "../../config" as config;
+
+.pc-view {
+	@include config.pc {
+	display: block !important;
+	}
+	@include config.sp {
+		display: none !important;
+	}
+}
+
+.sp-view {
+	@include config.pc {
+		display: none !important;
+	}
+	@include config.sp {
+		display: block !important;
+	}
+}

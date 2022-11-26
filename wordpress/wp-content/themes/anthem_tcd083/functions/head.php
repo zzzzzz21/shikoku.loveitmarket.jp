@@ -5,6 +5,7 @@
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/design-plus.css?ver=<?php echo version_num(); ?>">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sns-botton.css?ver=<?php echo version_num(); ?>">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/customize.css?ver=<?php echo version_num(); ?>">
 <link rel="stylesheet" media="screen and (max-width:1251px)" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css?ver=<?php echo version_num(); ?>">
 <link rel="stylesheet" media="screen and (max-width:1251px)" href="<?php echo get_template_directory_uri(); ?>/css/footer-bar.css?ver=<?php echo version_num(); ?>">
 

@@ -1,0 +1,50 @@
+@use "../config" as config;
+
+body {
+  &#body {
+    font-family: config.$BASE_FONT_FAMILY;
+  }
+}
+
+#body {
+    #header_top,
+    #header_bottom {
+        a {
+            &:hover {
+                color: config.$base-taxt-pink !important;
+            }
+        }
+    }
+
+    #global_menu {
+      text-align: right;
+        & > ul {
+            & > li {
+                &.current-menu-item {
+                    & > a {
+                        color: config.$base-taxt-pink !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #header_bottom_inner {
+      width: 100%;
+    }
+
+    #header_logo {
+        left: 20px;
+    }
+
+    #index_news {
+      background: config.$base-background-black;
+      a {
+        .date,
+        .title {
+          font-size: 20px;
+          color: config.$base-white-text-color;
+        }
+      }
+    }
+}
