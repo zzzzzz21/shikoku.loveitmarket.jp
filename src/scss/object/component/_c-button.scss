@@ -6,6 +6,14 @@
     max-width: 300px;
     width: 100%;
 
+    @include config.breakpoint {
+        max-width: 100%;
+        min-width: 200px;
+        margin: 40px auto 0;
+        width: 0;
+    }
+
+
     &_link {
         align-items: center;
         color: config.$base-white-text-color;
@@ -18,6 +26,11 @@
         min-height: 84px;
         padding: 10px;
         position: relative;
+
+        @include config.breakpoint {
+            font-size: 14px;
+            min-height: 45px;
+        }
 
         &::after {
             content: ">>";

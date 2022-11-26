@@ -275,7 +275,7 @@
 
 <section class="m-article-list">
   <h3 class="m-article-list_title">販売拠点紹介</h3>
-  <p class="m-article-list_lead">四国という島国ブランドの下、常設型と移動型でハイブリッド展開します。</p>
+  <p class="m-article-list_lead">四国という島国ブランドの下、<br>常設型と移動型でハイブリッド展開します。</p>
   <div class="m-article-list_inner">
   <article class="m-article-box">
     <a href="/base/">

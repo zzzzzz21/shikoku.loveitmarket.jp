@@ -1,3 +1,5 @@
+@use "mediaqueries" as mq;
+
 // インデント
 @mixin textIndent {
   text-indent: -1em;
@@ -8,7 +10,12 @@
   font-size: 40px;
   font-weight: normal;
   text-align: center;
+
+  @include mq.breakpoint {
+    font-size: 24px;
+  }
 }
+
 
 // vw計算
 @function get_vw($size, $viewport: 320) {

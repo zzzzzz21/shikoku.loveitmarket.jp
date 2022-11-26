@@ -1,8 +1,11 @@
 @use "../../config/" as config;
 
 .m-article-list {
-
     padding: 115px 0;
+
+    @include config.breakpoint {
+        padding: 50px 0;
+    }
 
     &_title {
         @include config.title01;
@@ -12,6 +15,11 @@
         font-size: 28px;
         text-align: center;
         margin-top: 36px;
+
+        @include config.breakpoint {
+            font-size: 14px;
+            margin-top: 18px;
+        }
     }
 
     &_inner {
@@ -20,6 +28,11 @@
         gap: 65px;
         justify-content: center;
         margin-top: 90px;
+
+        @include config.breakpoint {
+            gap: 32px;
+            margin-top: 45px;
+        }
     }
 }
 
@@ -37,11 +50,21 @@
         margin-top: 38px;
         font-weight: normal;
         text-align: center;
+
+        @include config.breakpoint {
+            font-size: 18px;
+            margin-top: 19px;
+        }
     }
 
     &_text {
         font-size: 22px;
         font-weight: normal;
         margin-top: 24px;
+
+        @include config.breakpoint {
+            font-size: 14px;
+            margin-top: 12px;
+        }
     }
 }

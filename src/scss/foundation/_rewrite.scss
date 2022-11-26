@@ -62,8 +62,17 @@ body {
 
     #return_top {
       right: 45px;
+
+      @include config.sp {
+        right: 22.5px;
+      }
+
       &.active {
         bottom: 40px;
+
+        @include config.sp {
+          bottom: 20px;
+        }
       }
   
       a {
@@ -74,6 +83,12 @@ body {
 
         &::before {
           display: none;
+        }
+
+        img {
+          @include config.sp {
+            width: 90px;
+          }
         }
       }
     } 
