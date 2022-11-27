@@ -4,7 +4,7 @@
     padding: 115px 50px;
 
     @include config.breakpoint {
-        padding: 50px;
+        padding: 50px 20px;
     }
 
     &_title {
@@ -28,6 +28,18 @@
         margin: 90px auto 0;
         max-width: 1400px;
 
+        @include config.breakpoint-large {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-medium {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-small {
+            gap: 30px;
+        }
+
         @include config.breakpoint {
             gap: 32px;
             margin-top: 45px;
@@ -40,6 +52,18 @@
     width: calc(100%/3 - 33.4px);
     overflow: hidden;
     position: relative;
+
+    @include config.breakpoint-large {
+        width: calc(100%/3 - 13.33333px);
+    }
+
+    @include config.breakpoint-medium {
+        width: calc(50% - 10px);
+    }
+
+    @include config.breakpoint-small {
+        width: 100%;
+    }
 
     &::before {
         content: "";

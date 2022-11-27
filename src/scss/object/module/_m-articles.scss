@@ -4,7 +4,11 @@
     padding: 115px 50px;
 
     @include config.breakpoint {
-        padding: 50px;
+        padding: 50px 20px;
+    }
+
+    &.partners {
+        padding-bottom: 200px;
     }
 
     &_title {
@@ -21,6 +25,10 @@
         }
     }
 
+    &_slider {
+        position: relative;
+    }
+
     &_inner {
         display: flex;
         flex-wrap: wrap;
@@ -32,15 +40,76 @@
             max-width: 1200px;
         }
 
+        &.slick {
+            gap: 0;
+
+            .m-article-box {
+                margin: 0 25px;
+
+                @include config.breakpoint-large {
+                    margin: 0 10px;
+                }
+
+                @include config.breakpoint-medium {
+                    margin: 0 10px;
+                }
+
+                @include config.breakpoint-small {
+                    margin: 0 15px;
+                }
+            }
+        }
+
+        @include config.breakpoint-large {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-medium {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-small {
+            gap: 30px;
+        }
+
         @include config.breakpoint {
             gap: 32px;
             margin-top: 45px;
         }
     }
+
+    &_prev,
+    &_next {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 30%;
+    }
+
+    &_prev {
+        left: -35px;
+    }
+
+    &_next {
+        right: -35px;
+    }
 }
 
 .m-article-box {    
     width: calc(100%/3 - 33.4px);
+    position: relative;
+
+    @include config.breakpoint-large {
+        width: calc(100%/3 - 13.33333px);
+    }
+
+    @include config.breakpoint-medium {
+        width: calc(50% - 10px);
+    }
+
+    @include config.breakpoint-small {
+        width: 100%;
+    }
 
     &.partner {
         .m-article-box_title {

@@ -49,7 +49,7 @@
      }
      if (!is_author()) {
 ?>
-<section class="m-article-list" style="background:<?php echo esc_attr($options['archive_blog_bg_color']); ?>;">
+<section class="m-article-list partners" style="background:<?php echo esc_attr($options['archive_blog_bg_color']); ?>;">
  <?php if($options['blog_show_header']){ ?>
     <?php if($title){ ?>
     <h2 class="m-article-list_title"><?php echo wp_kses_post(nl2br($title)); ?></h2>
@@ -60,7 +60,7 @@
  <?php }; ?>
 <?php }; ?>
   <?php if ( have_posts() ) : ?>
-  <div id="blog_list" class="m-article-list_inner">
+  <div class="m-article-list_inner">
    <?php
         while ( have_posts() ) : the_post();
           if(has_post_thumbnail()) {
@@ -77,7 +77,7 @@
       <div class="m-article-box_thumb">
        <div class="thumb" role="img" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
       </div>
-      <h3 class="m-article-box_title"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a></h3>
+      <h3 class="m-article-box_title"><span><?php the_title(); ?></span></h3>
       <?php if ( $options['show_archive_blog_desc']){ ?>
         <p class="m-article-box_text"><span><?php echo trim_excerpt(70); ?></span></p>
       <?php }; ?>
@@ -86,12 +86,13 @@
    <?php endwhile; ?>
   </div><!-- END #blog_list -->
 
-  <?php get_template_part('template-parts/navigation'); ?>
+  
 
   <?php else: ?>
 
   <p id="no_post"><?php _e('There is no registered post.', 'tcd-w');  ?></p>
 
   <?php endif; ?>
-  </section><!-- END .blog_list -->
+  <?php get_template_part('template-parts/navigation'); ?>
+  </section><!-- END .m-article-list -->
 <?php get_footer(); ?>

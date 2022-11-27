@@ -58,6 +58,7 @@ body {
 
     .index_product_list {
       background: config.$base-background-yellow;
+      padding: 0;
     }
 
     #footer {
@@ -68,4 +69,21 @@ body {
       }
     }
 
+    #news_archive {
+      border: none;
+      #main_col {
+        border: none;
+        padding: 0;
+
+        @include config.breakpoint {
+          padding: 30px 20px 0;
+        }
+      }
+    }
+
+    .carousel_arrow {
+      &::before {
+        font-size: 18px;
+      }
+    }
 }

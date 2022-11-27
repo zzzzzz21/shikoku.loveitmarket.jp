@@ -47,12 +47,12 @@
  <div id="main_col">
 
   <?php if(!empty($options['archive_news_headline'])) { ?>
-  <h2 class="headline rich_font_<?php echo esc_attr($options['archive_news_headline_font_type']); ?>"><?php echo esc_html($options['archive_news_headline']); ?></h2>
+  <h2 class="c-headline-1"><?php echo esc_html($options['archive_news_headline']); ?></h2>
   <?php }; ?>
 
   <?php if ( have_posts() ) : ?>
 
-  <div id="news_list" class="clearfix">
+  <div class="m-info-list">
    <?php
         while ( have_posts() ) : the_post();
           if(has_post_thumbnail()) {
@@ -64,19 +64,12 @@
             $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image2.gif";
           }
    ?>
-   <article class="item clearfix">
-    <a class="link animate_background" href="<?php the_permalink(); ?>">
-     <div class="image_wrap">
-      <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
-     </div>
-     <div class="title_area">
-      <div class="title_area_inner">
-       <h3 class="title rich_font_<?php echo esc_attr($options['archive_news_title_font_type']); ?>"><span><?php the_title(); ?></span></h3>
-       <?php if ( $options['archive_news_show_date'] ){ ?>
-       <p class="date"><time class="entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_time('Y.m.d'); ?></time></p>
+   <article class="m-info-list_item">
+    <a class="m-info-list_link" href="<?php the_permalink(); ?>">
+      <?php if ( $options['archive_news_show_date'] ){ ?>
+       <p class="m-info-list_date"><time class="entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_time('Y.m.d'); ?></time></p>
        <?php }; ?>
-      </div>
-     </div>
+       <h3 class="m-info-list_title"><span><?php the_title(); ?></span></h3>
     </a>
    </article>
   <?php endwhile; ?>

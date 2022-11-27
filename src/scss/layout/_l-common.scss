@@ -8,9 +8,9 @@
     bottom: 45px;
     right: 45px;
 
-    @include config.sp {
-      bottom: 22.5px;
-      right: 22.5px;
+    @include config.breakpoint-sp {
+      bottom: 70px;
+      right: 10px;
     }
 
     a {
@@ -24,9 +24,13 @@
       }
 
       img {
-        @include config.sp {
+        @include config.breakpoint-sp {
           width: 90px;
         }
       }
     }
-  } 
+  }
+
+.l-partners-index {
+  padding-bottom: 60px;
+}

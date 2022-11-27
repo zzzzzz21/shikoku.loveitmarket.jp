@@ -1304,6 +1304,7 @@ jQuery(document).ready(function($){
        $index_slider_bg_type = $options[$device . 'index_slider_bg_type'];
        $index_slider_time = $options[$device . 'index_slider_time'];
 ?>
+
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
@@ -1565,6 +1566,54 @@ jQuery(document).ready(function($){
   });
 });
 </script>
+<?php 
+       // コンテンツビルダー　記事一覧スライダー ------------------------------------------------------------
+       if ($options['contents_builder'] || $options['mobile_contents_builder']) :
+        if(is_mobile() && $options['mobile_show_contents_builder']) {
+          $contents_builder = $options['mobile_contents_builder'];
+        } else {
+          $contents_builder = $options['contents_builder'];
+        }
+        $content_count = 1;
+        foreach($contents_builder as $content) :
+          if ($content['cb_content_select'] == 'product_list') {
+            wp_enqueue_style('slick-style', apply_filters('page_builder_slider_slick_style_url', get_template_directory_uri().'/js/slick.css'), '', '1.0.0');
+            wp_enqueue_script('slick-script', apply_filters('page_builder_slider_slick_script_url', get_template_directory_uri().'/js/slick.min.js'), '', '1.0.0', true);
+?>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+  $('.index_product_list.num<?php echo $content_count; ?> .m-article-list_inner').slick({
+    infinite: true,
+    dots: false,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    touchThreshold: 20,
+    adaptiveHeight: false,
+    pauseOnHover: true,
+    autoplay: false,
+    fade: false,
+    easing: 'easeOutExpo',
+    speed: 700,
+    autoplaySpeed: 5000
+  });
+  $('.index_product_list .prev_item').on('click', function() {
+    $(this).closest('.index_product_list').find('.m-article-list_inner').slick('slickPrev');
+  });
+  $('.index_product_list .next_item').on('click', function() {
+    $(this).closest('.index_product_list').find('.m-article-list_inner').slick('slickNext');
+  });
+
+});
+</script>
+<?php
+           };
+           $content_count++;
+         endforeach;
+       endif;
+?>
 <?php
      }; // END front page
 
