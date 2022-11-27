@@ -16,12 +16,13 @@ body {
 
 #body {
     #header_logo {
+      top: 88px;
       @include config.breakpoint-large {
-        top: 45px;
+        top: 60px;
       }
       .mobile_logo_image {
         height: auto;
-        width: 125px;
+        width: 160px;
       }
     }
     #header_top,
@@ -31,6 +32,10 @@ body {
                 color: config.$base-taxt-pink !important;
             }
         }
+    }
+
+    #header_top_inner {
+      height: 0;
     }
 
     #global_menu {
