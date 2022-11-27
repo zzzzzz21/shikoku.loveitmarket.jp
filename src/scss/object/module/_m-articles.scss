@@ -1,10 +1,10 @@
 @use "../../config/" as config;
 
 .m-article-list {
-    padding: 115px 0;
+    padding: 115px 50px;
 
     @include config.breakpoint {
-        padding: 50px 0;
+        padding: 50px;
     }
 
     &_title {
@@ -12,12 +12,11 @@
     }
 
     &_lead {
-        font-size: 28px;
+        @include config.title02;
         text-align: center;
         margin-top: 36px;
 
         @include config.breakpoint {
-            font-size: 14px;
             margin-top: 18px;
         }
     }
@@ -25,9 +24,13 @@
     &_inner {
         display: flex;
         flex-wrap: wrap;
-        gap: 65px;
-        justify-content: center;
-        margin-top: 90px;
+        gap: 50px;
+        margin: 90px auto 0;
+        max-width: 1400px;
+
+        &.top {
+            max-width: 1200px;
+        }
 
         @include config.breakpoint {
             gap: 32px;
@@ -36,9 +39,46 @@
     }
 }
 
-.m-article-box {
-    max-width: 370px;
-    width: 100%;
+.m-article-box {    
+    width: calc(100%/3 - 33.4px);
+
+    &.partner {
+        .m-article-box_title {
+            margin-top: 28px;
+            text-align: left;
+
+            @include config.breakpoint {
+                margin-top: 19px;
+            }
+        }
+    }
+
+    &_link {
+        &:hover,
+        &:focus {
+            color: config.$base-taxt-pink;
+        }
+    }
+
+    &_thumb {
+        position: relative;
+        width: 100%;
+        &::before {
+            content: "";
+            padding-top: 100%;
+            display: block;
+        }
+
+        .thumb {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+        }
+    }
+
     &_image {
         img {
             width: 100%;
@@ -46,24 +86,20 @@
     }
 
     &_title {
-        font-size: 28px;
+        @include config.title02;
         margin-top: 38px;
-        font-weight: normal;
         text-align: center;
 
         @include config.breakpoint {
-            font-size: 18px;
             margin-top: 19px;
         }
     }
 
     &_text {
-        font-size: 22px;
-        font-weight: normal;
+        @include config.lead01;
         margin-top: 24px;
 
         @include config.breakpoint {
-            font-size: 14px;
             margin-top: 12px;
         }
     }

@@ -12,12 +12,11 @@
     }
 
     &_lead {
-        font-size: 28px;
+        @include config.title02;
         text-align: center;
         margin-top: 36px;
 
         @include config.breakpoint {
-            font-size: 14px;
             margin-top: 18px;
         }
     }
@@ -25,8 +24,9 @@
     &_inner {
         display: flex;
         flex-wrap: wrap;
-        gap: 65px;
-        margin-top: 90px;
+        gap: 50px;
+        margin: 90px auto 0;
+        max-width: 1400px;
 
         @include config.breakpoint {
             gap: 32px;
@@ -37,10 +37,9 @@
 
 .m-product-box {
     background: config.$base-background-white;
-    max-width: 430px;
+    width: calc(100%/3 - 33.4px);
     overflow: hidden;
     position: relative;
-    width: 100%;
 
     &::before {
         content: "";
@@ -50,7 +49,6 @@
 
     &_link {
         align-items: center;
-
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -72,7 +70,7 @@
 
         &:hover,
         &:focus {
-            color: config.$base-white-text-color;
+            color: config.$base-text-white;
 
             &:after {
                 background: rgba(config.$base-background-black, .6);
@@ -100,7 +98,7 @@
 
     &_title,
     &_text {
-        color: config.$base-white-text-color;
+        color: config.$base-text-white;
         display: none;
         font-size: 28px;
         font-weight: normal;

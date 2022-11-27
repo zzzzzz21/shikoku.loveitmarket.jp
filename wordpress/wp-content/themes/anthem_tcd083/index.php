@@ -59,9 +59,6 @@
     <?php }; ?>
  <?php }; ?>
 <?php }; ?>
-
-<div id="blog_archive">
-
   <?php if ( have_posts() ) : ?>
   <div id="blog_list" class="m-article-list_inner">
    <?php
@@ -75,10 +72,10 @@
             $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image2.gif";
           }
    ?>
-    <article class="m-article-box">
-     <a href="<?php the_permalink(); ?>">
-      <div class="image_wrap">
-       <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
+    <article class="m-article-box partner">
+     <a href="<?php the_permalink(); ?>" class="m-article-box_link">
+      <div class="m-article-box_thumb">
+       <div class="thumb" role="img" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
       </div>
       <h3 class="m-article-box_title"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a></h3>
       <?php if ( $options['show_archive_blog_desc']){ ?>
@@ -96,7 +93,5 @@
   <p id="no_post"><?php _e('There is no registered post.', 'tcd-w');  ?></p>
 
   <?php endif; ?>
-
-</div><!-- END #blog_archive -->
   </section><!-- END .blog_list -->
 <?php get_footer(); ?>

@@ -1,4 +1,15 @@
+@use "../../config/" as config;
+
 .c-headline-1 {
     font-size: 40px;
     text-align: center;
+}
+
+.c-headline-2 {
+    font-size: 28px;
+    font-weight: normal;
+
+    @include config.breakpoint {
+        font-size: 18px;
+    }
 }

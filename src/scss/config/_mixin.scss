@@ -6,6 +6,7 @@
   padding-left: 1em;
 }
 
+// 見出し１
 @mixin title01 {
   font-size: 40px;
   font-weight: normal;
@@ -16,6 +17,25 @@
   }
 }
 
+// 見出し１
+@mixin title02 {
+  font-size: 28px;
+  font-weight: normal;
+
+  @include mq.breakpoint {
+      font-size: 18px;
+  }
+}
+
+// リード分１
+@mixin lead01 {
+  font-size: 22px;
+  font-weight: normal;
+
+  @include mq.breakpoint {
+    font-size: 14px;
+  }
+}
 
 // vw計算
 @function get_vw($size, $viewport: 320) {

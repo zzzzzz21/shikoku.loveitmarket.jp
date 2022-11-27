@@ -18,24 +18,11 @@
 @mixin breakpoint {
 	@media screen and (max-width: 750px) {
 		@content;
-	  }
+	}
 }
-// ********************　PC・タブレット・SPをそれぞれ分ける場合(ブレイクポイントは２つ) ********************
 
-/*
-@mixin sp {
-	@media screen and (min-width:480px) and (max-width: 767px) {
+@mixin breakpoint-large {
+	@media screen and (max-width: 1251px) {
 		@content;
 	}
 }
-@mixin tablet {
-	@media screen and (min-width:768px) and (max-width: 1024px) {
-		@content;
-	}
-}
-@mixin pc {
-	@media (min-width: 1024px) {
-		@content;
-	}
-}
-*/

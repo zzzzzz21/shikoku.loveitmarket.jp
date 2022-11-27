@@ -1,1 +1,32 @@
+@use "../config" as config;
 
+.l-footer-icon {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    z-index: 100;
+    bottom: 45px;
+    right: 45px;
+
+    @include config.sp {
+      bottom: 22.5px;
+      right: 22.5px;
+    }
+
+    a {
+      background: none;
+      height: auto;
+      line-height: 1;
+      width: auto;
+
+      &::before {
+        display: none;
+      }
+
+      img {
+        @include config.sp {
+          width: 90px;
+        }
+      }
+    }
+  } 

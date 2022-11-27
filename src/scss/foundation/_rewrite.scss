@@ -8,6 +8,10 @@ body {
   &.post-type-archive-product {
     background: config.$base-background-yellow;
   }
+
+  &.blog {
+    background: config.$base-background-light-blue;
+  }
 }
 
 #body {
@@ -47,7 +51,7 @@ body {
         .date,
         .title {
           font-size: 20px;
-          color: config.$base-white-text-color;
+          color: config.$base-text-white;
         }
       }
     }
@@ -60,40 +64,8 @@ body {
       background: config.$base-background-black;
 
       a {
-        color: config.$base-white-text-color;
+        color: config.$base-text-white;
       }
     }
 
-    #return_top {
-      right: 45px;
-
-      @include config.sp {
-        right: 22.5px;
-      }
-
-      &.active {
-        bottom: 40px;
-
-        @include config.sp {
-          bottom: 20px;
-        }
-      }
-  
-      a {
-        background: none;
-        height: auto;
-        line-height: 1;
-        width: auto;
-
-        &::before {
-          display: none;
-        }
-
-        img {
-          @include config.sp {
-            width: 90px;
-          }
-        }
-      }
-    } 
 }

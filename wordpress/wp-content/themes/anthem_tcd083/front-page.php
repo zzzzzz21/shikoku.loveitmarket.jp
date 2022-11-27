@@ -276,31 +276,37 @@
 <section class="m-article-list">
   <h3 class="m-article-list_title">販売拠点紹介</h3>
   <p class="m-article-list_lead">四国という島国ブランドの下、<br>常設型と移動型でハイブリッド展開します。</p>
-  <div class="m-article-list_inner">
+  <div class="m-article-list_inner top">
   <article class="m-article-box">
-    <a href="/base/">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base01.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+    <a href="/base/" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base01.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      </div>
       <h4 class="m-article-box_title">十五万石</h4>
       <p class="m-article-box_text">
-        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
   各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
     </a>
   </article>
   <article class="m-article-box">
-    <a href="/base/">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+    <a href="/base/" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      </div>
       <h4 class="m-article-box_title">十五万石</h4>
       <p class="m-article-box_text">
-        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
   各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
     </a>
   </article>
   <article class="m-article-box">
-    <a href="/base/">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+    <a href="/base/" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      </div>
       <h4 class="m-article-box_title">十五万石</h4>
       <p class="m-article-box_text">
-        道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
+  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
   各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
     </a>
   </article>
