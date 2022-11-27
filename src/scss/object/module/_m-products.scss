@@ -1,0 +1,119 @@
+@use "../../config/" as config;
+
+.m-product-list {
+    padding: 115px 50px;
+
+    @include config.breakpoint {
+        padding: 50px;
+    }
+
+    &_title {
+        @include config.title01;
+    }
+
+    &_lead {
+        font-size: 28px;
+        text-align: center;
+        margin-top: 36px;
+
+        @include config.breakpoint {
+            font-size: 14px;
+            margin-top: 18px;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 65px;
+        margin-top: 90px;
+
+        @include config.breakpoint {
+            gap: 32px;
+            margin-top: 45px;
+        }
+    }
+}
+
+.m-product-box {
+    background: config.$base-background-white;
+    max-width: 430px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: "";
+        padding-top: 100%;
+        display: block;
+    }
+
+    &_link {
+        align-items: center;
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        &::after {
+            content: "";
+            background: transparent;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+            color: config.$base-white-text-color;
+
+            &:after {
+                background: rgba(config.$base-background-black, .6);
+            }
+
+            .m-product-box_title,
+            .m-product-box_text {
+                display: block;
+            }
+        }
+    }
+
+    &_image_wrap {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &_image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &_title,
+    &_text {
+        color: config.$base-white-text-color;
+        display: none;
+        font-size: 28px;
+        font-weight: normal;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        @include config.breakpoint {
+            font-size: 18px;
+        }
+    }
+
+    &_text {
+        margin-top: 1em;
+    }
+}

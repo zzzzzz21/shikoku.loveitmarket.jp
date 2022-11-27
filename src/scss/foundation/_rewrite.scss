@@ -4,6 +4,10 @@ body {
   &#body {
     font-family: config.$BASE_FONT_FAMILY;
   }
+
+  &.post-type-archive-product {
+    background: config.$base-background-yellow;
+  }
 }
 
 #body {
