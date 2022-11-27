@@ -15,6 +15,15 @@ body {
 }
 
 #body {
+    #header_logo {
+      @include config.breakpoint-large {
+        top: 45px;
+      }
+      .mobile_logo_image {
+        height: auto;
+        width: 125px;
+      }
+    }
     #header_top,
     #header_bottom {
         a {
