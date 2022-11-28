@@ -38,7 +38,7 @@
     ?>
   <div id="footer_carousel_wrap" <?php if(!$show_icon){ echo 'class="no_icon"'; }; ?>>
    <div id="footer_carousel">
-    <h3 class="headline rich_font"><?php echo esc_html($options['footer_carousel_headline']); ?></h3>
+    <h3 class="c-headline-2 center"><?php echo esc_html($options['footer_carousel_headline']); ?></h3>
     <div id="footer_carousel_inner">
      <?php
           while($product_query->have_posts()): $product_query->the_post();

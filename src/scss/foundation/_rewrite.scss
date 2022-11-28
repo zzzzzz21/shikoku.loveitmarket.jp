@@ -103,7 +103,11 @@ body {
 
     #footer_carousel_wrap {
       background: config.$base-background-yellow;
-      padding: 70px 0 150px;
+      padding: 70px 0 185px;
+
+      @include config.breakpoint-sp {
+        padding: 35px 0;
+      }
     }
 
     #news_archive {
