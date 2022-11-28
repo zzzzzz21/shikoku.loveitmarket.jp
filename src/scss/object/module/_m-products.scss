@@ -41,7 +41,6 @@
         }
 
         @include config.breakpoint {
-            gap: 32px;
             margin-top: 45px;
         }
     }

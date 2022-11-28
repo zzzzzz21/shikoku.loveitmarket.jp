@@ -3,6 +3,7 @@
 body {
   &#body {
     font-family: config.$BASE_FONT_FAMILY;
+    line-height: 1.6;
   }
 
   &.post-type-archive-product {
@@ -15,6 +16,7 @@ body {
 }
 
 #body {
+  
     #header_logo {
       top: 88px;
       @include config.breakpoint-large {
@@ -59,6 +61,10 @@ body {
         left: 20px;
     }
 
+    #bread_crumb {
+      text-align: right;
+    }
+
     #index_news {
       background: config.$base-background-black;
       a {
@@ -81,6 +87,23 @@ body {
       a {
         color: config.$base-text-white;
       }
+    }
+
+    #footer_carousel {
+      .headline {
+        color: config.$base-taxt-color;
+      }
+
+      .carousel_arrow {
+        &::before {
+          color: config.$base-taxt-color;
+        }
+      }
+    }
+
+    #footer_carousel_wrap {
+      background: config.$base-background-yellow;
+      padding: 70px 0 150px;
     }
 
     #news_archive {

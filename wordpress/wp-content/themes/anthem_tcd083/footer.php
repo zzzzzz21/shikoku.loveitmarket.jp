@@ -53,12 +53,6 @@
       <a href="<?php the_permalink() ?>">
        <?php if($show_icon && $featured_text) { ?><p class="icon" style="background:<?php echo esc_attr($main_color); ?>;"><span><?php echo wp_kses_post(nl2br($featured_text)); ?></span></p><?php }; ?>
        <img class="image" src="<?php echo esc_attr($image[0]); ?>" alt="" title="">
-       <div class="title_area">
-        <h4 class="title rich_font_<?php echo esc_attr($options['footer_carousel_title_font_type']); ?>"><span><?php the_title(); ?></span></h4>
-        <?php if(!empty($short_desc)) { ?>
-        <p class="desc"><span><?php echo wp_kses_post(nl2br($short_desc)); ?></span></p>
-        <?php }; ?>
-       </div>
       </a>
      </article>
      <?php }; endwhile; wp_reset_query(); ?>
@@ -77,7 +71,6 @@
           $overlay_color = implode(",",$overlay_color);
           $overlay_opacity = $options['footer_bg_overlay_opacity'];
    ?>
-   <div class="overlay" style="background:rgba(<?php echo esc_html($overlay_color); ?>,<?php echo esc_html($overlay_opacity); ?>);"></div>
    <?php }; ?>
 
    <?php if(!empty($bg_image)) { ?>

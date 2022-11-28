@@ -4,3 +4,7 @@
     @include config.title01;
     text-align: center;
 }
+
+.c-headline-2 {
+    @include config.title02;
+}

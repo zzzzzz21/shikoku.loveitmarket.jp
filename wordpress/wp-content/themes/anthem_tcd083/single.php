@@ -300,8 +300,8 @@ if(get_post_type() === 'post'):
     if($post_product_list->have_posts()):
   ?>
   <div id="related_post">
-  <h3 class="headline rich_font"><span>取扱商品</span></h3>
-  <div class="post_list clearfix">
+  <h3 class="c-headline-2"><span>取扱商品</span></h3>
+  <div class="post_list clearfix product-list_inner">
   <?php
       $partners_title = get_the_title();
       while( $post_product_list->have_posts() ) : $post_product_list->the_post();
@@ -316,17 +316,16 @@ if(get_post_type() === 'post'):
         $product_partners_title = get_post_meta(get_the_ID(), 'header_sub_title', true);
     ?>
     <?php if($product_partners_title === $partners_title):?>
-      <article class="item">
-        <a class="image_link animate_background" href="<?php the_permalink(); ?>">
-          <div class="image_wrap">
-            <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
-          </div>
+      <article class="m-product-box">
+        <a class="m-product-box_link animate_background" href="<?php the_permalink(); ?>">
+          <?php if($image) { ?>
+            <div class="m-product-box_image_wrap">
+              <div class="m-product-box_image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:contain;"></div>
+            </div>
+          <?php }; ?>
+          <h3 class="m-product-box_title"><span><?php the_title(); ?></span></h3>
+          <p class="m-product-box_text"><span><?php echo esc_html($partners_title); ?></span></p>
         </a>
-      <div class="title_area">
-        <div class="title_area_inner">
-          <h3 class="title"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a></h3>
-        </div>
-     </div>
     </article>
     <?php endif; ?>
 
