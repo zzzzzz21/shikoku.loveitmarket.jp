@@ -301,7 +301,7 @@ if(get_post_type() === 'post'):
   ?>
   <div id="related_post">
   <h3 class="c-headline-2"><span>取扱商品</span></h3>
-  <div class="post_list clearfix product-list_inner">
+  <div class="post_list clearfix m-product-list_inner small">
   <?php
       $partners_title = get_the_title();
       while( $post_product_list->have_posts() ) : $post_product_list->the_post();

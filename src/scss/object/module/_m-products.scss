@@ -28,6 +28,10 @@
         margin: 90px auto 0;
         max-width: 1400px;
 
+        &.small {
+            margin-top: 45px;
+        }
+
         @include config.breakpoint-large {
             gap: 30px 20px;
         }
