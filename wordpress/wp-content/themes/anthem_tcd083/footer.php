@@ -146,7 +146,7 @@
  </div>
 
  <div class="l-footer-icon">
-  <a href="#body"><img src="<?php echo get_template_directory_uri(); ?>/img/common_icon_love-it-market.png?ver=<?php echo version_num(); ?>" alt="十五万石"></a>
+   <a href="https://loveitmarket.jp/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/common_icon_love-it-market.png?ver=<?php echo version_num(); ?>" alt="十五万石"></a>
  </div>
 
  <?php

@@ -285,36 +285,33 @@
   <p class="m-article-list_lead">四国という島国ブランドの下、<br>常設型と移動型でハイブリッド展開します。</p>
   <div class="m-article-list_inner">
   <article class="m-article-box">
-    <a href="/base/" class="m-article-box_link">
+    <a href="/base/#dc1_content_1" class="m-article-box_link">
       <div class="m-article-box_image">
         <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base01.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
       </div>
-      <h4 class="m-article-box_title">十五万石</h4>
+      <h4 class="m-article-box_title">十五万石<br>［常設型販売拠点］</h4>
       <p class="m-article-box_text">
-  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
-  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+        道後湯の街の思い出を大切な方へのギフトに。世界の観光名所「道後温泉」のすぐ近く道後温泉街最大級のお土産スポット</p>
     </a>
   </article>
   <article class="m-article-box">
-    <a href="/base/" class="m-article-box_link">
+    <a href="/base/#dc1_content_2" class="m-article-box_link">
       <div class="m-article-box_image">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="マーケティングカー［移動型拠点］">
       </div>
-      <h4 class="m-article-box_title">十五万石</h4>
+      <h4 class="m-article-box_title">マーケティングカー<br>［移動型拠点］</h4>
       <p class="m-article-box_text">
-  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
-  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+        地域と地域、事業と事業、技と技、人と人とをつなぐ共創コミュニティの起点</p>
     </a>
   </article>
   <article class="m-article-box">
-    <a href="/base/" class="m-article-box_link">
+    <a href="/base/#dc1_content_3" class="m-article-box_link">
       <div class="m-article-box_image">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="マーケティングワゴン［移動型販売拠点］">
       </div>
-      <h4 class="m-article-box_title">十五万石</h4>
+      <h4 class="m-article-box_title">マーケティングワゴン<br>［移動型販売拠点］</h4>
       <p class="m-article-box_text">
-  道後湯の街の思い出を大切な方へのギフトに。道後、松山、愛媛に留まらず、四国各地・瀬戸内のお土産を一堂に取り揃えさせていただきました。<br>
-  各地の銘菓、銘酒、銘品に加え、遊び心をくすぐるキュートなゆるキャラ商品もご用意しております！！</p>
+        サービスエリアや道の駅に出展予定。</p>
     </a>
   </article>
   </div>
