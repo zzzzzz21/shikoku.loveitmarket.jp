@@ -959,6 +959,18 @@ register_post_type( 'news', array(
   'show_in_rest' => false	// ブロックエディターを使用しない、REST APIで表示しない
 ));
 
+//「お知らせ」カテゴリー
+$news_category_label = $options['news_category_label'] ? esc_html( $options['news_category_label'] ) : __( 'News category', 'tcd-w' );
+$news_category_slug = $options['news_category_slug'] ? sanitize_title( $options['news_category_slug'] ) : 'news_category';
+$news_category_labels = array(
+  'name' => $news_category_label,
+  'singular_name' => $news_category_label
+);
+register_taxonomy( 'news_category', 'news', array(
+  'labels' => $news_category_labels,
+  'hierarchical' => true,
+  'rewrite' => array( 'slug' => 'info' )
+));
 
 /* アーカイブページの記事数を変更 */
 function change_news_num( $query ) {
@@ -1058,4 +1070,9 @@ function add_category_custom_fields($deprecated, $column_name, $term_id) {
 add_action('manage_category_custom_column', 'add_category_custom_fields', 10, 3);
 
 
+function add_custom_rewrite_rules() {
+  add_rewrite_rule('info/([^0-9]+)/?$', 'index.php?news_category=$matches[1]&taxonomy=news_category', 'top');
+  add_rewrite_rule('info/([^0-9]+)/page/([^/]+)/?$', 'index.php?news_category=$matches[1]&taxonomy=news_category&paged=$matches[2]', 'top');
+}
+add_action('init', 'add_custom_rewrite_rules');
 ?>

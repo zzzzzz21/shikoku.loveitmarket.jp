@@ -87,23 +87,25 @@
 ?>
 <div class="index_product_list cb_contents inview num<?php echo $content_count; ?>" id="cb_content_<?php echo $content_count; ?>">
 
- <div class="cb_contents_inner">
+ <div class="m-article-list">
 
   <?php if(!empty($content['catch'])) { ?>
-  <h4 class="cb_catch animate_item rich_font_<?php echo esc_attr($content['catch_font_type']); ?>"><?php echo wp_kses_post(nl2br($content['catch'])); ?></h4>
+  <h4 class="m-article-list_title"><?php echo wp_kses_post(nl2br($content['catch'])); ?></h4>
   <?php }; ?>
 
   <?php if(!empty($content['desc'])) { ?>
-  <p class="cb_desc animate_item"><?php echo wp_kses_post(nl2br($content['desc'])); ?></p>
+  <p class="m-article-list_lead"><?php echo wp_kses_post(nl2br($content['desc'])); ?></p>
   <?php }; ?>
 
   <?php
        $post_num = $content['post_num'];
        $args = array( 'post_type' => 'product', 'posts_per_page' => $post_num, 'orderby' => array( 'menu_order' => 'ASC', 'date' => 'DESC' ) );
        $post_list_query = new wp_query($args);
+       $total_post_num = $post_list_query->post_count;
        if($post_list_query->have_posts()):
   ?>
-  <div class="product_list clearfix animate_item">
+  <div class="m-article-list_slider">
+  <div class="m-article-list_inner slick">
    <?php
         while($post_list_query->have_posts()): $post_list_query->the_post();
          if(has_post_thumbnail()) {
@@ -117,23 +119,28 @@
          $main_color = get_post_meta($post->ID, 'main_color', true) ?  get_post_meta($post->ID, 'main_color', true) : '#008a98';
          $short_desc = get_post_meta($post->ID, 'short_desc', true);
    ?>
-   <article class="item">
-    <a class="animate_background" href="<?php the_permalink(); ?>">
+   <article class="m-article-box">
+    <a class="m-article-box_link" href="<?php the_permalink(); ?>">
      <?php if($image) { ?>
-     <div class="image_wrap">
-      <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
+     <div class="m-article-box_thumb">
+      <div class="thumb" role="img" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
      </div>
      <?php }; ?>
-     <h3 class="title rich_font_<?php echo esc_attr($content['title_font_type']); ?>" style="background:<?php echo esc_attr($main_color); ?>;"><span><?php the_title(); ?></span></h3>
-     <div class="desc_area">
-      <?php if($short_desc) { ?>
-      <p class="desc"><span><?php echo esc_html($short_desc); ?></span></p>
-      <?php }; ?>
-     </div>
+     <h3 class="m-article-box_title" ><span><?php the_title(); ?></span></h3>
+      <p class="m-article-box_text"><span><?php echo esc_html($short_desc); ?></span></p>
     </a>
    </article>
    <?php endwhile; ?>
+
   </div><!-- END .product_list -->
+  <?php if($total_post_num > 3){ ?>
+   <div class="m-article-list_area">
+    <button class="m-article-list_prev carousel_arrow prev_item"></button>
+    <button class="m-article-list_next carousel_arrow next_item"></button>
+   </div>
+   <?php }; ?>
+  </div>
+
   <?php endif; ?>
 
   <?php if($content['show_button']){ ?>
@@ -142,7 +149,7 @@
   </div>
   <?php }; ?>
 
- </div><!-- END .cb_contents_inner -->
+ </div><!-- END .m-article-list -->
 
 </div><!-- END .index_product_list -->
 
@@ -272,4 +279,44 @@
 // コンテンツビルダーここまで
 ?>
 </div><!-- END #index_content_builder -->
+
+<section class="m-article-list">
+  <h3 class="m-article-list_title">販売拠点紹介</h3>
+  <p class="m-article-list_lead">四国という島国ブランドの下、<br>常設型と移動型でハイブリッド展開します。</p>
+  <div class="m-article-list_inner">
+  <article class="m-article-box">
+    <a href="/base/#dc1_content_1" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base01.jpg?ver=<?php echo version_num(); ?>" alt="十五万石">
+      </div>
+      <h4 class="m-article-box_title">十五万石<br>［常設型販売拠点］</h4>
+      <p class="m-article-box_text">
+        道後湯の街の思い出を大切な方へのギフトに。世界の観光名所「道後温泉」のすぐ近く道後温泉街最大級のお土産スポット</p>
+    </a>
+  </article>
+  <article class="m-article-box">
+    <a href="/base/#dc1_content_2" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base02.jpg?ver=<?php echo version_num(); ?>" alt="マーケティングカー［移動型拠点］">
+      </div>
+      <h4 class="m-article-box_title">マーケティングカー<br>［移動型拠点］</h4>
+      <p class="m-article-box_text">
+        地域と地域、事業と事業、技と技、人と人とをつなぐ共創コミュニティの起点</p>
+    </a>
+  </article>
+  <article class="m-article-box">
+    <a href="/base/#dc1_content_3" class="m-article-box_link">
+      <div class="m-article-box_image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/top-sales-base03.jpg?ver=<?php echo version_num(); ?>" alt="マーケティングワゴン［移動型販売拠点］">
+      </div>
+      <h4 class="m-article-box_title">マーケティングワゴン<br>［移動型販売拠点］</h4>
+      <p class="m-article-box_text">
+        サービスエリアや道の駅に出展予定。</p>
+    </a>
+  </article>
+  </div>
+
+</section>
+
+<?php get_template_part('template-parts/news'); ?>
 <?php get_footer(); ?>

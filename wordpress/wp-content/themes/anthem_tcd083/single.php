@@ -290,6 +290,51 @@
          };
        };
   ?>
+<?php 
+// 参画事業者詳細ページの下部に取扱商品を表示する
+if(get_post_type() === 'post'):
+?>
+  <?php
+    $product_args = array( 'post_type' => 'product');
+    $post_product_list = new wp_query($product_args);
+    if($post_product_list->have_posts()):
+  ?>
+  <div id="related_post">
+  <h3 class="c-headline-2"><span>取扱商品</span></h3>
+  <div class="post_list clearfix m-product-list_inner small">
+  <?php
+      $partners_title = get_the_title();
+      while( $post_product_list->have_posts() ) : $post_product_list->the_post();
+        if(has_post_thumbnail()) {
+          $image = wp_get_attachment_image_src( get_post_thumbnail_id($ID), 'size3' );
+        } elseif($options['no_image1']) {
+          $image = wp_get_attachment_image_src( $options['no_image1'], 'full' );
+        } else {
+          $image = array();
+          $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image1.gif";
+        }
+        $product_partners_title = get_post_meta(get_the_ID(), 'header_sub_title', true);
+    ?>
+    <?php if($product_partners_title === $partners_title):?>
+      <article class="m-product-box">
+        <a class="m-product-box_link animate_background" href="<?php the_permalink(); ?>">
+          <?php if($image) { ?>
+            <div class="m-product-box_image_wrap">
+              <div class="m-product-box_image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:contain;"></div>
+            </div>
+          <?php }; ?>
+          <h3 class="m-product-box_title"><span><?php the_title(); ?></span></h3>
+          <p class="m-product-box_text"><span><?php echo esc_html($partners_title); ?></span></p>
+        </a>
+    </article>
+    <?php endif; ?>
+
+   <?php endwhile; wp_reset_query(); ?>
+   </div><!-- END .post_list -->
+  </div><!-- END #related_post -->
+
+<?php endif; ?>
+<?php endif; ?>
 
   <?php
        // comment ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

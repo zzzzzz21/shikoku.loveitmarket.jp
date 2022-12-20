@@ -25,20 +25,8 @@
  <?php }; ?>
  <div id="product_side_content">
   <div class="top_area">
-   <?php
-        if($options['show_side_product_category']){
-          $product_category = get_the_terms( $post->ID, 'product_category' );
-          if ( $product_category && ! is_wp_error($product_category) ) {
-            foreach ( $product_category as $cat ) :
-              $cat_name = $cat->name;
-              $cat_id = $cat->term_id;
-              $cat_url = get_term_link($cat_id,'product_category');
-            endforeach;
-   ?>
-   <a class="category" href="<?php echo esc_url(get_post_type_archive_link('product')); ?>#product_cat_<?php echo esc_attr($cat_id); ?>"><?php echo esc_html($cat_name); ?></a>
-   <?php }; }; ?>
    <?php if(!empty($side_catch)) { ?>
-   <h3 class="catch rich_font"><?php echo wp_kses_post(nl2br($side_catch)); ?></h3>
+   <h3 class="catch rich_font"><?php the_title(); ?></h3>
    <?php }; ?>
   </div>
   <?php if(!empty($side_desc_top)) { ?>

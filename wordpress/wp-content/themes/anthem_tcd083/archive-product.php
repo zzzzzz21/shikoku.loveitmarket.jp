@@ -16,65 +16,21 @@
        $overlay_opacity = $options['product_overlay_opacity'];
      }
 ?>
-<div id="page_header_wrap">
- <?php if($options['product_show_header']){ ?>
- <div id="page_header" class="text_layout_type2 no_layer_image">
-  <div id="page_header_inner">
-   <div class="caption">
-    <?php if($title){ ?>
-    <h2 class="catch animate_item rich_font_<?php echo esc_attr($title_font_type); ?>"><?php echo wp_kses_post(nl2br($title)); ?></h2>
-    <?php }; ?>
-    <?php if($desc){ ?>
-    <p class="desc animate_item rich_font_<?php echo esc_attr($desc_font_type); ?>"><span<?php if($desc_mobile){ echo ' class="pc"'; }; ?>><?php echo wp_kses_post(nl2br($desc)); ?></span><?php if($desc_mobile){ ?><span class="mobile"><?php echo wp_kses_post(nl2br($desc_mobile)); ?></span><?php }; ?></p>
-    <?php }; ?>
-   </div>
-  </div>
-  <?php if($use_overlay) { ?>
-  <div class="overlay" style="background:rgba(<?php echo esc_html($overlay_color); ?>,<?php echo esc_html($overlay_opacity); ?>);"></div>
-  <?php }; ?>
-  <?php if($bg_image) { ?><div class="bg_image<?php if($bg_image_mobile) { echo ' pc'; }; ?>" style="background:url(<?php echo esc_attr($bg_image[0]); ?>) no-repeat center top; background-size:cover;"></div><?php }; ?>
-  <?php if($bg_image_mobile) { ?><div class="bg_image mobile" style="background:url(<?php echo esc_attr($bg_image_mobile[0]); ?>) no-repeat center top; background-size:cover;"></div><?php }; ?>
- </div>
- <?php }; ?>
- <?php
-      $category = get_terms( 'product_category', array( 'orderby' => 'order' ) );
-      if ( $category && ! is_wp_error( $category ) ) :
-        $total = count($category);
- ?>
- <div id="header_category_button_wrap" class="animate_item" data-width="900">
-  <div id="header_category_button"<?php if($total < 5) { echo ' class="type2"'; }; ?>>
-   <ol>
-    <li class="active"><a data-filter="all" href="#">ALL</a></li>
-    <?php
-         foreach ( $category as $cat ):
-           $cat_id = $cat->term_id;
-           $cat_name = $cat->name;
-    ?>
-    <li><a id="product_cat_<?php echo esc_attr($cat_id); ?>" data-filter="product_cat_<?php echo esc_attr($cat_id); ?>" href="#"><?php echo esc_html($cat_name); ?></a></li>
-    <?php endforeach; ?>
-   </ol>
-   <div class="slide_item"></div>
-  </div>
- </div>
- <?php endif; ?>
-</div><!-- END #header_category_button_wrap -->
-
-<div id="product_archive">
+<div class="m-product-list">
 
   <?php if($options['archive_product_catch'] || $options['archive_product_desc']) { ?>
-  <div class="content_header">
+
    <?php if($options['archive_product_catch']) { ?>
-   <h3 class="catch rich_font_<?php echo esc_attr($options['archive_product_catch_font_type']); ?>"><span<?php if($options['archive_product_catch_mobile']) { echo ' class="pc"'; }; ?>><?php echo esc_html($options['archive_product_catch']); ?></span><?php if($options['archive_product_catch_mobile']) { ?><span class="mobile"><?php echo esc_html($options['archive_product_catch_mobile']); ?></span><?php }; ?></h3>
+   <h3 class="m-product-list_title"><span<?php if($options['archive_product_catch_mobile']) { echo ' class="pc"'; }; ?>><?php echo esc_html($options['archive_product_catch']); ?></span><?php if($options['archive_product_catch_mobile']) { ?><span class="mobile"><?php echo esc_html($options['archive_product_catch_mobile']); ?></span><?php }; ?></h3>
    <?php }; ?>
    <?php if($options['archive_product_desc']) { ?>
-   <p class="desc"><span<?php if($options['archive_product_desc_mobile']) { echo ' class="pc"'; }; ?>><?php echo wp_kses_post(nl2br($options['archive_product_desc'])); ?></span><?php if($options['archive_product_desc_mobile']) { ?><span class="mobile"><?php echo esc_html($options['archive_product_desc_mobile']); ?></span><?php }; ?></p>
+   <p class="m-product-list_lead"><span<?php if($options['archive_product_desc_mobile']) { echo ' class="pc"'; }; ?>><?php echo wp_kses_post(nl2br($options['archive_product_desc'])); ?></span><?php if($options['archive_product_desc_mobile']) { ?><span class="mobile"><?php echo esc_html($options['archive_product_desc_mobile']); ?></span><?php }; ?></p>
    <?php }; ?>
-  </div>
   <?php }; ?>
 
   <?php if ( have_posts() ) : ?>
 
-  <div class="product_list clearfix animation_<?php echo esc_attr($options['archive_product_list_animation_type']); ?>" id="archive_product_list">
+  <div class="m-product-list_inner animation_<?php echo esc_attr($options['archive_product_list_animation_type']); ?>" id="archive_product_list">
    <?php
         while ( have_posts() ) : the_post();
          if(has_post_thumbnail()) {
@@ -86,7 +42,8 @@
            $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image2.gif";
          }
          $main_color = get_post_meta($post->ID, 'main_color', true) ?  get_post_meta($post->ID, 'main_color', true) : '#008a98';
-         $short_desc = get_post_meta($post->ID, 'short_desc', true);
+         // $short_desc = get_post_meta($post->ID, 'short_desc', true);
+         $partners_title = get_post_meta($post->ID, 'header_sub_title', true);
          $product_category = get_the_terms( $post->ID, 'product_category' );
          $category_ids = array();
          if ( $product_category && ! is_wp_error($product_category) ) {
@@ -97,19 +54,17 @@
            $category_ids = implode(" ", $category_ids);
          }
    ?>
-   <article class="item" data-category="<?php if($category_ids){ echo $category_ids; }; ?>">
-    <a class="animate_background" href="<?php the_permalink(); ?>">
+   <article class="m-product-box" data-category="<?php if($category_ids){ echo $category_ids; }; ?>">
+    <a class="m-product-box_link animate_background" href="<?php the_permalink(); ?>">
      <?php if($image) { ?>
-     <div class="image_wrap">
-      <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
+     <div class="m-product-box_image_wrap">
+      <div class="m-product-box_image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:contain;"></div>
      </div>
      <?php }; ?>
-     <h3 class="title rich_font_<?php echo esc_attr($options['archive_product_title_font_type']); ?>" style="background:<?php echo esc_attr($main_color); ?>;"><span><?php the_title(); ?></span></h3>
-     <div class="desc_area">
-      <?php if($short_desc) { ?>
-      <p class="desc"><span><?php echo esc_html($short_desc); ?></span></p>
+     <h3 class="m-product-box_title"><span><?php the_title(); ?></span></h3>
+      <?php if($product_category) { ?>
+      <p class="m-product-box_text"><span><?php echo esc_html($partners_title); ?></span></p>
       <?php }; ?>
-     </div>
     </a>
    </article>
    <?php endwhile; ?>
@@ -122,5 +77,5 @@
   <?php endif; ?>
 
 </div><!-- END #product_archive -->
-
+<?php get_template_part('template-parts/news'); ?>
 <?php get_footer(); ?>

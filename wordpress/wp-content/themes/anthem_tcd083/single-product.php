@@ -71,23 +71,6 @@
           $content_link_button_url = get_post_meta($post->ID, 'content_link_button_url', true);
           $content_link_button_target = get_post_meta($post->ID, 'content_link_button_target', true);
  ?>
- <div id="header_category_button_wrap" data-width="1200">
-  <div id="header_category_button" class="type2">
-   <ol>
-    <?php
-         $i = 1;
-         foreach( $product_cf as $key => $content ) :
-            if ( $content['show_content'] && !empty($content['headline']) ) {
-    ?>
-    <li<?php if($i == 1){ echo ' class="active"'; }; ?>><a href="#product_content<?php echo esc_attr($key); ?>"><?php echo esc_html($content['headline']); ?></a></li>
-    <?php }; $i++; endforeach; ?>
-    <?php if($show_content_link_button){ ?>
-    <li><a class="outer_link" href="<?php echo esc_url($content_link_button_url); ?>"<?php if($content_link_button_target) { echo ' target="_blank"'; }; ?>><?php echo esc_html($content_link_button_label); ?></a></li>
-    <?php }; ?>
-   </ol>
-   <div class="slide_item"></div>
-  </div>
- </div>
  <?php endif; }; ?>
 </div><!-- END #page_header_wrap -->
 

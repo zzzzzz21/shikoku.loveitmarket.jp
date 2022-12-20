@@ -31,9 +31,14 @@
          $total_post_num = $product_query->post_count;
          if ($product_query->have_posts()) :
   ?>
+  
+  <?php
+  // 取扱商品個別ページでのみカルーセルを表示 
+  if(is_singular('product')) { 
+    ?>
   <div id="footer_carousel_wrap" <?php if(!$show_icon){ echo 'class="no_icon"'; }; ?>>
    <div id="footer_carousel">
-    <h3 class="headline rich_font"><?php echo esc_html($options['footer_carousel_headline']); ?></h3>
+    <h3 class="c-headline-2 center"><?php echo esc_html($options['footer_carousel_headline']); ?></h3>
     <div id="footer_carousel_inner">
      <?php
           while($product_query->have_posts()): $product_query->the_post();
@@ -48,12 +53,6 @@
       <a href="<?php the_permalink() ?>">
        <?php if($show_icon && $featured_text) { ?><p class="icon" style="background:<?php echo esc_attr($main_color); ?>;"><span><?php echo wp_kses_post(nl2br($featured_text)); ?></span></p><?php }; ?>
        <img class="image" src="<?php echo esc_attr($image[0]); ?>" alt="" title="">
-       <div class="title_area">
-        <h4 class="title rich_font_<?php echo esc_attr($options['footer_carousel_title_font_type']); ?>"><span><?php the_title(); ?></span></h4>
-        <?php if(!empty($short_desc)) { ?>
-        <p class="desc"><span><?php echo wp_kses_post(nl2br($short_desc)); ?></span></p>
-        <?php }; ?>
-       </div>
       </a>
      </article>
      <?php }; endwhile; wp_reset_query(); ?>
@@ -72,7 +71,6 @@
           $overlay_color = implode(",",$overlay_color);
           $overlay_opacity = $options['footer_bg_overlay_opacity'];
    ?>
-   <div class="overlay" style="background:rgba(<?php echo esc_html($overlay_color); ?>,<?php echo esc_html($overlay_opacity); ?>);"></div>
    <?php }; ?>
 
    <?php if(!empty($bg_image)) { ?>
@@ -82,6 +80,7 @@
    <div class="footer_bg_image mobile" style="background:url(<?php echo esc_attr($bg_image_mobile[0]); ?>) no-repeat center center; background-size:cover;"></div>
    <?php }; ?>
   </div><!-- END #footer_carousel_wrap -->
+  <?php }; ?>
   <?php
          endif;
        };
@@ -101,43 +100,6 @@
          $post_list_query = new wp_query($args);
          if($post_list_query->have_posts()):
   ?>
-  <div id="footer_post_list_wrap">
-   <div id="footer_post_list" class="clearfix">
-    <?php
-         while($post_list_query->have_posts()): $post_list_query->the_post();
-           if(has_post_thumbnail()) {
-             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'size1' );
-           } elseif($options['no_image1']) {
-             $image = wp_get_attachment_image_src( $options['no_image1'], 'full' );
-           } else {
-             $image = array();
-             $image[0] = esc_url(get_bloginfo('template_url')) . "/img/common/no_image1.gif";
-           }
-           $category = wp_get_post_terms( $post->ID, 'category' , array( 'orderby' => 'term_order' ));
-           if ( $category && ! is_wp_error($category) ) {
-             foreach ( $category as $cat ) :
-               $cat_name = $cat->name;
-               $cat_id = $cat->term_id;
-               break;
-             endforeach;
-           };
-    ?>
-    <article class="item">
-     <?php if ( $category && ! is_wp_error($category) ) { ?>
-     <p class="category cat_id_<?php echo esc_attr($cat_id); ?>"><a href="<?php echo esc_url(get_term_link($cat_id,'category')); ?>"><?php echo esc_html($cat_name); ?></a></p>
-     <?php }; ?>
-     <a class="animate_background clearfix" href="<?php the_permalink(); ?>">
-      <div class="image_wrap">
-       <div class="image" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
-      </div>
-      <div class="title_area">
-       <h3 class="title"><span><?php the_title(); ?></span></h3>
-      </div>
-     </a>
-    </article>
-    <?php endwhile; ?>
-   </div><!-- END #footer_post_list -->
-  </div><!-- END #footer_post_list_wrap -->
   <?php endif; wp_reset_query(); }; ?>
 
   <div id="footer_bottom">
@@ -160,7 +122,7 @@
            $contact = $options['header_contact_url'];
            $show_rss = $options['header_show_rss'];
     ?>
-    <ul id="footer_sns" class="clearfix">
+    <!-- <ul id="footer_sns" class="clearfix">
      <?php if($insta) { ?><li class="insta"><a href="<?php echo esc_url($insta); ?>" rel="nofollow" target="_blank" title="Instagram"><span>Instagram</span></a></li><?php }; ?>
      <?php if($twitter) { ?><li class="twitter"><a href="<?php echo esc_url($twitter); ?>" rel="nofollow" target="_blank" title="Twitter"><span>Twitter</span></a></li><?php }; ?>
      <?php if($facebook) { ?><li class="facebook"><a href="<?php echo esc_url($facebook); ?>" rel="nofollow" target="_blank" title="Facebook"><span>Facebook</span></a></li><?php }; ?>
@@ -168,7 +130,7 @@
      <?php if($youtube) { ?><li class="youtube"><a href="<?php echo esc_url($youtube); ?>" rel="nofollow" target="_blank" title="Youtube"><span>Youtube</span></a></li><?php }; ?>
      <?php if($contact) { ?><li class="contact"><a href="<?php echo esc_url($contact); ?>" rel="nofollow" target="_blank" title="Contact"><span>Contact</span></a></li><?php }; ?>
      <?php if($show_rss) { ?><li class="rss"><a href="<?php esc_url(bloginfo('rss2_url')); ?>" rel="nofollow" target="_blank" title="RSS"><span>RSS</span></a></li><?php }; ?>
-    </ul>
+    </ul> -->
     <?php }; ?>
 
   </div><!-- END #footer_bottom -->
@@ -180,7 +142,11 @@
  <?php }; // END hide footer ?>
 
  <div id="return_top">
-  <a href="#body"><span>TOP</span></a>
+ <a href="#body"><span>TOP</span></a>
+ </div>
+
+ <div class="l-footer-icon">
+   <a href="https://loveitmarket.jp/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/common_icon_love-it-market.png?ver=<?php echo version_num(); ?>" alt="十五万石"></a>
  </div>
 
  <?php
