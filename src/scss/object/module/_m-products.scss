@@ -1,0 +1,144 @@
+@use "../../config/" as config;
+
+.m-product-list {
+    padding: 115px 50px;
+
+    @include config.breakpoint {
+        padding: 50px 20px;
+    }
+
+    &_title {
+        @include config.title01;
+    }
+
+    &_lead {
+        @include config.title02;
+        text-align: center;
+        margin-top: 36px;
+
+        @include config.breakpoint {
+            margin-top: 18px;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin: 90px auto 0;
+        max-width: 1400px;
+
+        &.small {
+            margin-top: 45px;
+        }
+
+        @include config.breakpoint-large {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-medium {
+            gap: 30px 20px;
+        }
+
+        @include config.breakpoint-small {
+            gap: 30px;
+        }
+
+        @include config.breakpoint {
+            margin-top: 45px;
+        }
+    }
+}
+
+.m-product-box {
+    background: config.$base-background-white;
+    width: calc(100%/3 - 33.4px);
+    overflow: hidden;
+    position: relative;
+
+    @include config.breakpoint-large {
+        width: calc(100%/3 - 13.33333px);
+    }
+
+    @include config.breakpoint-medium {
+        width: calc(50% - 10px);
+    }
+
+    // @include config.breakpoint-small {
+    //     width: 100%;
+    // }
+
+    &::before {
+        content: "";
+        padding-top: 100%;
+        display: block;
+    }
+
+    &_link {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        &::after {
+            content: "";
+            background: transparent;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+            color: config.$base-text-white;
+
+            &:after {
+                background: rgba(config.$base-background-black, .6);
+            }
+
+            .m-product-box_title,
+            .m-product-box_text {
+                display: block;
+            }
+        }
+    }
+
+    &_image_wrap {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &_image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &_title,
+    &_text {
+        color: config.$base-text-white;
+        display: none;
+        font-size: 28px;
+        font-weight: normal;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        @include config.breakpoint {
+            font-size: 18px;
+        }
+    }
+
+    &_text {
+        margin-top: 1em;
+    }
+}

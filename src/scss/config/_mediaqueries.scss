@@ -1,0 +1,40 @@
+// ********************************************************************************************
+//
+// mediaqueries.scss
+//
+// ********************************************************************************************
+
+// ********************　PC(と大きいタブレット)とSP(と小さいタブレット)を分ける場合(ブレイクポイントは1つ) ********************
+@mixin breakpoint-sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin breakpoint-pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin breakpoint {
+	@media screen and (max-width: 750px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-small {
+	@media screen and (max-width: 550px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-medium {
+	@media screen and (max-width: 950px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-large {
+	@media screen and (max-width: 1251px) {
+		@content;
+	}
+}

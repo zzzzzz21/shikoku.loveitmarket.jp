@@ -1,0 +1,44 @@
+@use "../../config/" as config;
+
+.c-button-primary {
+    display: flex;
+    margin: 55px auto 0;
+    max-width: 300px;
+    width: 100%;
+
+    @include config.breakpoint {
+        max-width: 100%;
+        min-width: 200px;
+        margin: 40px auto 0;
+        width: 0;
+    }
+
+
+    &_link {
+        align-items: center;
+        color: config.$base-text-white;
+        background: config.$base-background-pink;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 22px;
+        flex: 1;
+        justify-content: center;
+        min-height: 84px;
+        padding: 10px;
+        position: relative;
+
+        @include config.breakpoint {
+            font-size: 14px;
+            min-height: 45px;
+        }
+
+        &::after {
+            content: ">>";
+            transition: none;
+        }
+
+        &:hover {
+            color: config.$base-text-white;
+        }
+    }
+}
