@@ -256,12 +256,12 @@ body.blog {
 
 @media screen and (max-width: 750px) {
   .m-article-list_title {
-    font-size: 24px
+    font-size: 20px
   }
 }
 
 .m-article-list_lead {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: normal;
   text-align: center;
   margin-top: 36px
@@ -269,13 +269,7 @@ body.blog {
 
 @media screen and (max-width: 750px) {
   .m-article-list_lead {
-    font-size: 18px
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .m-article-list_lead {
-    margin-top: 18px
+    font-size: 16px
   }
 }
 
@@ -443,7 +437,7 @@ body.blog {
 }
 
 .m-article-box_text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
   margin-top: 1em
 }
@@ -483,7 +477,7 @@ body.blog {
 }
 
 .m-product-list_lead {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: normal;
   text-align: center;
   margin-top: 36px
@@ -491,13 +485,7 @@ body.blog {
 
 @media screen and (max-width: 750px) {
   .m-product-list_lead {
-    font-size: 18px
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .m-product-list_lead {
-    margin-top: 18px
+    margin-top: 16px
   }
 }
 
@@ -624,18 +612,20 @@ body.blog {
 .m-product-box_text {
   color: #fff;
   display: none;
-  font-size: 28px;
+  font-size: 16px;
   font-weight: normal;
   text-align: center;
   position: relative;
-  z-index: 2
+  padding: .4em;
+  z-index: 2;
 }
 
 @media screen and (max-width: 750px) {
 
   .m-product-box_title,
   .m-product-box_text {
-    font-size: 18px
+    font-size: 18px;
+    padding: 0;
   }
 }
 

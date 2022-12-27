@@ -408,7 +408,7 @@ body.single-product #page_header .link_button.animate_item.animate {
 .index_layer_content .layer_image img { max-width:50%; }
 .index_layer_content.image_layout_type2 .layer_image img { max-width:70%; }
 @media screen and (max-width:750px) {
-  .index_layer_content .cb_contents_inner { margin:0 30px; }
+  .index_layer_content .cb_contents_inner { margin:0 20px; }
   .index_layer_content .content { text-align:center; padding:0 !important; width:100%; top:50px; -ms-transform: translateY(0%); -webkit-transform: translateY(0%); transform: translateY(0%); }
   .index_layer_content.text_layout_mobile_type1 .content { text-align:left; }
   .index_layer_content.text_layout_mobile_type3 .content { text-align:right; }

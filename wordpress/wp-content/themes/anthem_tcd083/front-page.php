@@ -291,7 +291,7 @@
       </div>
       <h4 class="m-article-box_title">十五万石<br>［常設型販売拠点］</h4>
       <p class="m-article-box_text">
-        道後湯の街の思い出を大切な方へのギフトに。世界の観光名所「道後温泉」のすぐ近く道後温泉街最大級のお土産スポット</p>
+        道後湯の街の思い出を大切な方へのギフトに。<br>世界の観光名所「道後温泉」のすぐ近く<br>道後温泉街最大級のお土産スポット</p>
     </a>
   </article>
   <article class="m-article-box">
