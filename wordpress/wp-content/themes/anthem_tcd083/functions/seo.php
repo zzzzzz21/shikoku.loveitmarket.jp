@@ -130,6 +130,15 @@ function get_seo_description() {
   	$trim_content = htmlspecialchars( $trim_content );
   	return esc_html( $trim_content );
 
+	} elseif($_SERVER["REQUEST_URI"] == '/partners/') {
+		return esc_html('hogehoge');
+
+	} elseif($_SERVER["REQUEST_URI"] == '/items/') {
+		return esc_html('hogehoge2');
+
+	} elseif($_SERVER["REQUEST_URI"] == '/info/') {
+		return esc_html('hogehoge3');
+
  	// 抜粋記事が登録されている場合は出力
  	} elseif ( ( is_single() || is_page() ) && has_excerpt() ) { 
   	$trim_content = get_the_excerpt();

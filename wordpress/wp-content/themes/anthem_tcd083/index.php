@@ -79,7 +79,11 @@
       </div>
       <h3 class="m-article-box_title"><span><?php the_title(); ?></span></h3>
       <?php if ( $options['show_archive_blog_desc']){ ?>
+<<<<<<< HEAD
         <!--<p class="m-article-box_text"><span><?php echo trim_excerpt(70); ?></span></p>-->
+=======
+        <p class="m-article-box_text"><span><?php echo trim_excerpt(70); ?></span></p>
+>>>>>>> develop
       <?php }; ?>
     </a>
     </article>

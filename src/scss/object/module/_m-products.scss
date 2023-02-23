@@ -64,9 +64,9 @@
         width: calc(50% - 10px);
     }
 
-    // @include config.breakpoint-small {
-    //     width: 100%;
-    // }
+    @include config.breakpoint-small {
+        width: 100%;
+    }
 
     &::before {
         content: "";
