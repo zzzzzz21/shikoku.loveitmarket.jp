@@ -50,7 +50,7 @@ function ogp() {
   global $post;
   $options = get_design_plus_option();
 
-  $og_type = is_singular() ? 'article' : 'website';
+  $og_type = is_front_page() ? 'website' : 'article';
   $og_url = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
   //$og_title = is_front_page() || is_home() ? get_bloginfo( 'name' ) : strip_tags( get_the_title() );
   $og_title = is_front_page() ? get_bloginfo( 'name' ) : strip_tags( wp_get_document_title() );

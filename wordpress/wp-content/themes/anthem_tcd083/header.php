@@ -18,8 +18,6 @@
 <meta name="viewport" content="width=device-width">
 <title><?php wp_title('|', true, 'right'); ?></title>
 <meta name="description" content="<?php seo_description(); ?>">
-<meta name="og:description" content="<?php seo_description(); ?>">
-<meta name="twitter:description" content="<?php seo_description(); ?>">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php
      if ( $options['favicon'] ) {
