@@ -1597,7 +1597,6 @@ jQuery(document).ready(function($){
     fade: false,
     easing: 'easeOutExpo',
     speed: 700,
-<<<<<<< HEAD
     autoplaySpeed: 5000,
     responsive: [
       {
@@ -1605,9 +1604,6 @@ jQuery(document).ready(function($){
         settings: { slidesToShow: 2 }
       }
     ]
-=======
-    autoplaySpeed: 5000
->>>>>>> develop
   });
   $('.index_product_list .prev_item').on('click', function() {
     $(this).closest('.index_product_list').find('.m-article-list_inner').slick('slickPrev');

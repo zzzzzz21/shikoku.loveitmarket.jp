@@ -17,11 +17,7 @@
     <?php endwhile;  ?>
    </div>
    <div class="c-button-primary animate_item inview_mobile animate">
-<<<<<<< HEAD
     <a class="c-button-primary_link" href="/info/"><span>お知らせ一覧</span></a>
-=======
-    <a class="c-button-primary_link" href="/news/"><span>お知らせ一覧</span></a>
->>>>>>> develop
    </div>
 </section>
  <?php

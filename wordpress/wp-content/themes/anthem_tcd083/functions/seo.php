@@ -131,13 +131,13 @@ function get_seo_description() {
   	return esc_html( $trim_content );
 
 	} elseif($_SERVER["REQUEST_URI"] == '/partners/') {
-		return esc_html('hogehoge');
+      return esc_html('参画事業者。LOVE IT MARKET 四国の公式ウェブサイトです。');
 
 	} elseif($_SERVER["REQUEST_URI"] == '/items/') {
-		return esc_html('hogehoge2');
+      return esc_html('取扱商品｜LOVE IT MARKET 四国の公式ウェブサイトです。');
 
 	} elseif($_SERVER["REQUEST_URI"] == '/info/') {
-		return esc_html('hogehoge3');
+      return esc_html('お知らせ。LOVE IT MARKET 四国の公式ウェブサイトです。');
 
  	// 抜粋記事が登録されている場合は出力
  	} elseif ( ( is_single() || is_page() ) && has_excerpt() ) { 
