@@ -1,0 +1,36 @@
+@use "../../config/" as config;
+
+.m-info-list {
+    &_title {
+        @include config.title02;
+    }
+
+    &_date {
+        @include config.lead01;
+    }
+
+    &_item {
+        display: flex;
+        padding: 50px 0;
+
+        &:nth-of-type(n+2) {
+            border-top: 1px solid config.$base-border-black;
+        }
+
+        @include config.breakpoint {
+            padding: 20px 0;
+          }
+    }
+
+    &_link {
+        font-size: 20px;
+
+        @include config.breakpoint {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: config.$base-taxt-pink;
+        }
+    }
+}

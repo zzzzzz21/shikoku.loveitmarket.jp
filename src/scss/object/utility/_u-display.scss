@@ -1,0 +1,19 @@
+@use "../../config" as config;
+
+.pc-view {
+	@include config.breakpoint-pc {
+	display: block !important;
+	}
+	@include config.breakpoint-sp {
+		display: none !important;
+	}
+}
+
+.sp-view {
+	@include config.breakpoint-pc {
+		display: none !important;
+	}
+	@include config.breakpoint-sp {
+		display: block !important;
+	}
+}
