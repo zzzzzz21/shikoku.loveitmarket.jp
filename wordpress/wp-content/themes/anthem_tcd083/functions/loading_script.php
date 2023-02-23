@@ -40,8 +40,19 @@ jQuery(document).ready(function($){
            if($display_header_content == 'show') {
     ?>
     setTimeout(function(){
+      console.log('aaaaa');
       $('#header_slider_content').slick('slickPlay');
       $('#header_slider_content').slick('setPosition');
+      $('#header_slider_content').slick({
+        responsive: [
+          {
+            breakpoint: 400, // 399px以下のサイズに適用
+            settings: {
+            slidesToShow: 1,
+            },
+          },
+        ],
+      });
       $('#header_slider_content .item1').addClass('animate');
       $('#header_slider_content .item1 .animate_item').each(function(i){
         $(this).delay(i *500).queue(function(next) {

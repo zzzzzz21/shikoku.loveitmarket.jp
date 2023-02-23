@@ -24,7 +24,17 @@
        $favicon_image = wp_get_attachment_image_src( $options['favicon'], 'full');
        if(!empty($favicon_image)) {
 ?>
-<link rel="shortcut icon" href="<?php echo esc_url($favicon_image[0]); ?>">
+<link rel="shortcut icon" type="image/vnd.microsoft.ico" href="<?php echo esc_url($favicon_image[0]); ?>">
+<link rel="icon" type="image/vnd.microsoft.ico" href="<?php echo esc_url($favicon_image[0]); ?>">
+<link rel="apple-touch-icon" sizes="57x57" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://shikoku.loveitmarket.jp/favicons/apple-touch-icon-180x180.png">
 <?php }; }; ?>
 <?php wp_enqueue_style('style', get_stylesheet_uri(), false, version_num(), 'all'); wp_enqueue_script( 'jquery' ); if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
@@ -34,6 +44,11 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-578MDFD"
                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <div class="no-js">
+      <p>ブラウザの設定でjavascriptを有効にしてください。</p>
+    </div>
+  </noscript>
 <?php
      if ($options['show_load_screen'] == 'type2') {
        if(is_front_page()){

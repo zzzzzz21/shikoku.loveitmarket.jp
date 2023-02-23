@@ -960,7 +960,7 @@ register_post_type( 'news', array(
 ));
 
 //「お知らせ」カテゴリー
-$news_category_label = $options['news_category_label'] ? esc_html( $options['news_category_label'] ) : __( 'News category', 'tcd-w' );
+$news_category_label = $options['news_category_label'] ? esc_html( $options['news_category_label'] ) : __( 'お知らせ', 'tcd-w' );
 $news_category_slug = $options['news_category_slug'] ? sanitize_title( $options['news_category_slug'] ) : 'news_category';
 $news_category_labels = array(
   'name' => $news_category_label,
