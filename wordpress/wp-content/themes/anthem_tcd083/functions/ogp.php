@@ -59,8 +59,8 @@ function ogp() {
 ?>
 <meta property="og:type" content="<?php echo $og_type; ?>">
 <meta property="og:url" content="<?php echo esc_url( $og_url ); ?>">
-<meta property="og:title" content="<?php echo $og_title; ?>">
-<meta property="og:description" content="<?php echo $og_description; ?>">
+<meta property="og:title" content="<?php wp_title('|', true, 'right'); ?>">
+<meta property="og:description" content="<?php seo_description(); ?>">
 <meta property="og:site_name" content="<?php echo get_bloginfo( 'name' ); ?>">
 <meta property="og:image" content="<?php og_image(0); ?>">
 <meta property="og:image:secure_url" content="<?php og_image(0); ?>"> 
@@ -78,8 +78,8 @@ function ogp() {
 <meta name="twitter:site" content="@<?php echo esc_attr( $options['twitter_account_name'] ); ?>">
 <meta name="twitter:creator" content="<?php echo esc_attr( $options['twitter_account_name'] ); ?>">
 <?php } ?>
-<meta name="twitter:title" content="<?php echo $og_title; ?>">
-<meta property="twitter:description" content="<?php echo $og_description; ?>">
+<meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?>">
+<meta property="twitter:description" content="<?php seo_description(); ?>">
 <?php if ( is_singular() ) { ?>
 <meta name="twitter:image:src" content="<?php twitter_image(); ?>">
 <?php } }
