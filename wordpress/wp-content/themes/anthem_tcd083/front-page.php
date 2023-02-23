@@ -123,7 +123,7 @@
     <a class="m-article-box_link" href="<?php the_permalink(); ?>">
      <?php if($image) { ?>
      <div class="m-article-box_thumb">
-      <div class="thumb" role="img" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-size:cover;"></div>
+      <div class="thumb" role="img" style="background:url(<?php echo esc_attr($image[0]); ?>) no-repeat center center; background-color: #fff; background-size:contain;"></div>
      </div>
      <?php }; ?>
      <h3 class="m-article-box_title" ><span><?php the_title(); ?></span></h3>
